@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twoje Imię Nazwisko - Junior Developer Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">TwojeInicjały</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">O mnie</a>
+                <a href="#skills" class="nav-link">Umiejętności</a>
+                <a href="#projects" class="nav-link">Projekty</a>
+                <a href="#contact" class="nav-link">Kontakt</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Cześć, jestem <span class="highlight">Twoje Imię</span>
+                </h1>
+                <p class="hero-subtitle">Junior Developer & Student Informatyki</p>
+                <p class="hero-description">
+                    Pasjonat programowania na 3. roku studiów IT. Tworzę nowoczesne aplikacje webowe 
+                    i mobilne, ciągle się uczę i rozwijam swoje umiejętności.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Zobacz Projekty</a>
+                    <a href="assets/cv.pdf" class="btn btn-secondary" target="_blank">
+                        <i class="fas fa-download"></i> Pobierz CV
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/twoja-nazwa" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/twoj-profil" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:twoj@email.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/profile.jpg" alt="Twoje zdjęcie profilowe">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">O mnie</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Jestem studentem informatyki na 3. roku, który odkrył swoją pasję do programowania 
+                        już na początku studiów. Specjalizuję się w tworzeniu aplikacji webowych, 
+                        ale interesuję się również mobile developmentem i machine learningiem.
+                    </p>
+                    <p>
+                        W wolnym czasie uczestniczę w hackathonach, rozwijam własne projekty i śledzę 
+                        najnowsze trendy w technologii. Moim celem jest zostanie pełnoprawnym 
+                        programistą i tworzenie rozwiązań, które będą miały pozytywny wpływ na życie ludzi.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>10+</h3>
+                            <p>Projektów</p>
+                        </div>
+                        <div class="stat">
+                            <h3>3</h3>
+                            <p>Lata nauki</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Technologii</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Umiejętności</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">HTML5</span>
+                        <span class="skill-item">CSS3</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">Vue.js</span>
+                        <span class="skill-item">SASS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">Express.js</span>
+                        <span class="skill-item">Django</span>
+                        <span class="skill-item">REST API</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Bazy Danych</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">SQLite</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Narzędzia</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">GitHub</span>
+                        <span class="skill-item">VS Code</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Figma</span>
+                        <span class="skill-item">Postman</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Moje Projekty</h2>
+            <div class="projects-grid">
+                
+                <!-- PROJEKT 1 - ZASTĄP SWOIMI DANYMI -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/project1.jpg" alt="Nazwa Projektu 1">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/twoja-nazwa/projekt1" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://twoja-nazwa.github.io/projekt1" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Nazwa Projektu 1</h3>
+                        <p>Krótki opis projektu - co robi, jakie problemy rozwiązuje, dla kogo jest przeznaczony.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJEKT 2 - ZASTĄP SWOIMI DANYMI -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/project2.jpg" alt="Nazwa Projektu 2">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/twoja-nazwa/projekt2" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://twoja-nazwa.github.io/projekt2" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Nazwa Projektu 2</h3>
+                        <p>Krótki opis projektu - co robi, jakie problemy rozwiązuje, dla kogo jest przeznaczony.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJEKT 3 - ZASTĄP SWOIMI DANYMI -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/projects/project3.jpg" alt="Nazwa Projektu 3">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/twoja-nazwa/projekt3" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://twoja-nazwa.github.io/projekt3" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Nazwa Projektu 3</h3>
+                        <p>Krótki opis projektu - co robi, jakie problemy rozwiązuje, dla kogo jest przeznaczony.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DODAJ WIĘCEJ PROJEKTÓW KOPIUJĄC POWYŻSZY BLOK -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Skontaktuj się ze mną</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Zainteresowany współpracą?</h3>
+                    <p>Szukam możliwości stażu lub pierwszej pracy jako Junior Developer. 
+                       Jestem otwarty na nowe wyzwania i chętny do nauki.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>twoj@email.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Twoje Miasto, Polska</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Student III roku Informatyka</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Twoje imię" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Twój email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Wiadomość" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Twoje Imię Nazwisko. Wszystkie prawa zastrzeżone.</p>
+            <div class="footer-social">
+                <a href="https://github.com/twoja-nazwa" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/twoj-profil" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:twoj@email.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
