@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Budget Tracker - Michał Połujański</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-detail {
+            padding: 100px 0;
+            min-height: 100vh;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .project-links {
+            margin: 2rem 0;
+        }
+        .project-links .btn {
+            margin: 0 0.5rem;
+        }
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        .project-info h3 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        .project-features {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        .feature-list li i {
+            color: #10b981;
+            margin-right: 0.5rem;
+        }
+        .back-button {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            z-index: 1000;
+        }
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html#projects" class="btn btn-secondary back-button">
+        <i class="fas fa-arrow-left"></i> Powrót do portfolio
+    </a>
+
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1 class="project-title">Home Budget Tracker</h1>
+                <p class="project-subtitle">
+                    Kompleksowa aplikacja webowa do zarządzania budżetem domowym z zaawansowanymi 
+                    funkcjami śledzenia wydatków i wizualizacji danych finansowych
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/mikipmaster/budget-web-application" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i> Zobacz kod źródłowy
+                    </a>
+                    <a href="#demo" class="btn btn-secondary">
+                        <i class="fas fa-play"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="project-info">
+                    <h3>O Projekcie</h3>
+                    <p>
+                        Home Budget Tracker to nowoczesna aplikacja webowa zaprojektowana z myślą 
+                        o efektywnym zarządzaniu finansami domowymi. Aplikacja oferuje intuicyjny 
+                        interfejs do śledzenia wydatków, planowania budżetu i analizy trendów finansowych.
+                    </p>
+                    <p>
+                        System wykorzystuje lokalne przechowywanie danych, zapewniając prywatność 
+                        użytkownika, jednocześnie oferując możliwość eksportu danych do różnych formatów. 
+                        Responsywny design sprawia, że aplikacja działa perfekcyjnie na wszystkich urządzeniach.
+                    </p>
+
+                    <h3>Technologie Użyte</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript ES6+</span>
+                        <span class="tech-tag">Chart.js</span>
+                        <span class="tech-tag">Local Storage API</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="project-features">
+                    <h3>Kluczowe Funkcjonalności</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Śledzenie przychodów i wydatków</li>
+                        <li><i class="fas fa-check-circle"></i> Kategoryzacja transakcji</li>
+                        <li><i class="fas fa-check-circle"></i> Interaktywne wykresy i raporty</li>
+                        <li><i class="fas fa-check-circle"></i> Planowanie budżetu miesięcznego</li>
+                        <li><i class="fas fa-check-circle"></i> Powiadomienia o przekroczeniu budżetu</li>
+                        <li><i class="fas fa-check-circle"></i> Eksport danych do CSV/PDF</li>
+                        <li><i class="fas fa-check-circle"></i> Responsywny design (PWA ready)</li>
+                        <li><i class="fas fa-check-circle"></i> Offline functionality</li>
+                    </ul>
+
+                    <h3>Analiza Finansowa</h3>
+                    <p>
+                        Aplikacja oferuje zaawansowane narzędzia analizy finansowej, w tym 
+                        trendy wydatków, prognozy budżetowe i automatyczne kategoryzowanie 
+                        transakcji. Użytkownicy mogą łatwo zidentyfikować obszary oszczędności.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-showcase">
+                <h3>Główne Moduły Aplikacji</h3>
+                <div class="modules-grid">
+                    <div class="module">
+                        <div class="module-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h4>Dodawanie Transakcji</h4>
+                        <p>Szybkie dodawanie przychodów i wydatków z automatyczną kategoryzacją</p>
+                    </div>
+                    <div class="module">
+                        <div class="module-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h4>Wizualizacja Danych</h4>
+                        <p>Interaktywne wykresy pokazujące struktur wydatków i trendy</p>
+                    </div>
+                    <div class="module">
+                        <div class="module-icon">
+                            <i class="fas fa-target"></i>
+                        </div>
+                        <h4>Planowanie Budżetu</h4>
+                        <p>Ustalanie limitów wydatków dla różnych kategorii</p>
+                    </div>
+                    <div class="module">
+                        <div class="module-icon">
+                            <i class="fas fa-file-export"></i>
+                        </div>
+                        <h4>Eksport Raportów</h4>
+                        <p>Generowanie szczegółowych raportów finansowych w różnych formatach</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .project-showcase {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .module {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .module:hover {
+            transform: translateY(-5px);
+        }
+        .module-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+        .module h4 {
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Calendar Application - Michał Połujański</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-detail {
+            padding: 100px 0;
+            min-height: 100vh;
+        }
+        .project-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .project-links {
+            margin: 2rem 0;
+        }
+        .project-links .btn {
+            margin: 0 0.5rem;
+        }
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        .project-info h3 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        .project-features {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        .feature-list li i {
+            color: #10b981;
+            margin-right: 0.5rem;
+        }
+        .back-button {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            z-index: 1000;
+        }
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html#projects" class="btn btn-secondary back-button">
+        <i class="fas fa-arrow-left"></i> Powrót do portfolio
+    </a>
+
+    <section class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1 class="project-title">Java Calendar Application</h1>
+                <p class="project-subtitle">
+                    Zaawansowana aplikacja desktopowa kalendarza stworzona w Javie z pełnym 
+                    zarządzaniem wydarzeniami, przypomnieniami i eksportem danych
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/mikipmaster/projektKalendarza" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i> Zobacz kod źródłowy
+                    </a>
+                    <a href="#demo" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Pobierz aplikację
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="project-info">
+                    <h3>O Projekcie</h3>
+                    <p>
+                        Java Calendar Application to kompleksowa aplikacja desktopowa stworzona 
+                        w języku Java z wykorzystaniem biblioteki Swing. Projekt demonstruje 
+                        zaawansowane techniki programowania obiektowego oraz zarządzania danymi.
+                    </p>
+                    <p>
+                        Aplikacja oferuje pełnowartościowy system kalendarza z możliwością 
+                        zarządzania wydarzeniami, ustawiania przypomnień i eksportu danych. 
+                        Interface użytkownika jest intuicyjny i przystosowany do codziennego użytku.
+                    </p>
+
+                    <h3>Technologie Użyte</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java SE</span>
+                        <span class="tech-tag">Swing GUI</span>
+                        <span class="tech-tag">File I/O</span>
+                        <span class="tech-tag">Collections Framework</span>
+                        <span class="tech-tag">OOP Design Patterns</span>
+                        <span class="tech-tag">MVC Architecture</span>
+                    </div>
+                </div>
+
+                <div class="project-features">
+                    <h3>Kluczowe Funkcjonalności</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Zarządzanie wydarzeniami i spotkaniami</li>
+                        <li><i class="fas fa-check-circle"></i> System przypomnień i notyfikacji</li>
+                        <li><i class="fas fa-check-circle"></i> Kategoryzacja wydarzeń według typu</li>
+                        <li><i class="fas fa-check-circle"></i> Widoki: miesięczny, tygodniowy, dzienny</li>
+                        <li><i class="fas fa-check-circle"></i> Eksport danych do różnych formatów</li>
+                        <li><i class="fas fa-check-circle"></i> Import z zewnętrznych kalendarzy</li>
+                        <li><i class="fas fa-check-circle"></i> Wyszukiwanie wydarzeń</li>
+                        <li><i class="fas fa-check-circle"></i> Backup i przywracanie danych</li>
+                    </ul>
+
+                    <h3>Architektura Aplikacji</h3>
+                    <p>
+                        Projekt wykorzystuje wzorzec MVC (Model-View-Controller) dla 
+                        separation of concerns. Dane są przechowywane w plikach z możliwością 
+                        serialization obiektów Java. Interfejs został zaprojektowany zgodnie 
+                        z zasadami usability.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-showcase">
+                <h3>Komponenty Systemu</h3>
+                <div class="components-grid">
+                    <div class="component">
+                        <div class="component-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h4>Calendar View</h4>
+                        <p>Intuicyjny widok kalendarza z nawigacją między miesiącami i latami</p>
+                    </div>
+                    <div class="component">
+                        <div class="component-icon">
+                            <i class="fas fa-plus-square"></i>
+                        </div>
+                        <h4>Event Management</h4>
+                        <p>Tworzenie, edycja i usuwanie wydarzeń z zaawansowanymi opcjami</p>
+                    </div>
+                    <div class="component">
+                        <div class="component-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h4>Reminder System</h4>
+                        <p>Elastyczny system przypomnień z różnymi opcjami powiadomień</p>
+                    </div>
+                    <div class="component">
+                        <div class="component-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>Data Persistence</h4>
+                        <p>Niezawodne przechowywanie danych z automatycznym backup</p>
+                    </div>
+                </div>
+
+                <div class="technical-details">
+                    <h3>Szczegóły Techniczne</h3>
+                    <div class="details-grid">
+                        <div class="detail-card">
+                            <h4>Wzorce Projektowe</h4>
+                            <p>Implementacja wzorców Observer, Singleton i Factory dla lepszej architektury kodu</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Zarządzanie Pamięcią</h4>
+                            <p>Optymalizacja wykorzystania pamięci z proper garbage collection handling</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>Exception Handling</h4>
+                            <p>Kompleksowa obsługa błędów z user-friendly komunikatami</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .project-showcase {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .component {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .component:hover {
+            transform: translateY(-5px);
+        }
+        .component-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+        .component h4 {
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        .technical-details {
+            margin-top: 4rem;
+        }
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .detail-card {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #6366f1;
+        }
+        .detail-card h4 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+    </style>
+</body>
+</html>

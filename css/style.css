@@ -701,3 +701,47 @@ body {
         font-size: .85rem;
     }
 }
+
+/* ================================
+   PROJECT DETAIL PAGES STYLES
+   ================================ */
+
+   .btn-outline {
+    background: transparent;
+    border: 2px solid #6366f1;
+    color: #6366f1;
+}
+
+.btn-outline:hover {
+    background: #6366f1;
+    color: white;
+}
+
+/* Status badges */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.completed {
+    background: #10b981;
+    color: white;
+}
+
+.status-badge.in-progress {
+    background: #f59e0b;
+    color: white;
+}
+
+.status-badge.design {
+    background: #8b5cf6;
+    color: white;
+}
+
+.status-badge.open-source {
+    background: #3b82f6;
+    color: white;
+}
