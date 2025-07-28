@@ -970,3 +970,35 @@ body {
         page-break-inside: avoid;
     }
 }
+
+/* ===============================
+   FORCE CONSISTENT PROJECT GRID
+   =============================== */
+   .projects-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+    margin-top: 3rem !important;
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.project-card {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+}
+
+/* Responsywność z !important */
+@media (max-width: 1199px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
