@@ -8,7 +8,7 @@ const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
 // Toggle menu mobilnego
-if (navToggle) {
+if (navToggle && navMenu) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         navToggle.classList.toggle('active');
@@ -22,10 +22,10 @@ if (navToggle) {
 // Zamknij menu po kliknięciu w link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
+        if (navToggle) navToggle.classList.remove('active');
         
-        const bars = navToggle.querySelectorAll('.bar');
+        const bars = navToggle ? navToggle.querySelectorAll('.bar') : [];
         bars.forEach(bar => bar.classList.remove('active'));
     });
 });
@@ -58,22 +58,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 let lastScrollTop = 0;
 const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Zmiana tła navbar przy scroll
-    if (scrollTop > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        navbar.style.backdropFilter = 'blur(20px)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
-        navbar.style.backdropFilter = 'blur(10px)';
-    }
-    
-    lastScrollTop = scrollTop;
-});
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Zmiana tła navbar przy scroll
+        if (scrollTop > 100) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            navbar.style.backdropFilter = 'blur(20px)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = 'none';
+            navbar.style.backdropFilter = 'blur(10px)';
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+}
 
 // ===============================
 // AKTYWNY LINK W NAWIGACJI
@@ -166,45 +168,100 @@ if (skillsSection) {
 }
 
 // ===============================
-// ANIMACJA PROJEKTÓW
+// PROGRESS BARS – ANIMACJA
+// ===============================
+
+const progressObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const bar = entry.target.querySelector('.progress-fill');
+            if (bar) {
+                const target = bar.dataset.width;
+                if (target) {
+                    bar.style.width = target + '%';
+                }
+            }
+            progressObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.4 });
+
+// Obsługa progress bars - z zabezpieczeniem
+document.querySelectorAll('.progress-item').forEach(item => {
+    const fill = item.querySelector('.progress-fill');
+    if (fill && fill.getAttribute('data-width')) {
+        fill.dataset.width = fill.getAttribute('data-width');
+        progressObserver.observe(item);
+    }
+});
+
+// ===============================
+// ANIMACJA PROJEKTÓW (BEZPIECZNA)
 // ===============================
 
 const projectCards = document.querySelectorAll('.project-card');
 
-projectCards.forEach((card, index) => {
-    // Przygotuj karty do animacji
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-    
-    // Hover effects
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-        this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)';
+// Tylko jeśli istnieją karty projektów
+if (projectCards.length > 0) {
+    projectCards.forEach((card, index) => {
+        // Przygotuj karty do animacji
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        
+        // Hover effects
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        });
     });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-        this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-    });
-});
 
-// Observer dla projektów
-const projectsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const cards = entry.target.querySelectorAll('.project-card');
-            cards.forEach(card => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
+    // Observer dla projektów
+    const projectsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const cards = entry.target.querySelectorAll('.project-card');
+                cards.forEach(card => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                });
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const projectsSection = document.querySelector('.projects');
+    if (projectsSection) {
+        projectsObserver.observe(projectsSection);
+    }
+}
+
+// ===============================
+// PROJECT FILTER – BEZPIECZNA WERSJA
+// ===============================
+
+const filterBtns = document.querySelectorAll('.filter-btn');
+
+// Tylko jeśli istnieją przyciski filtra I karty projektów
+if (filterBtns.length > 0 && projectCards.length > 0) {
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // aktywny przycisk
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+
+            projectCards.forEach(card => {
+                const category = card.dataset.category;
+                card.style.display = (filter === 'all' || filter === category) ? 'block' : 'none';
             });
-        }
+        });
     });
-}, { threshold: 0.1 });
-
-const projectsSection = document.querySelector('.projects');
-if (projectsSection) {
-    projectsObserver.observe(projectsSection);
 }
 
 // ===============================
@@ -216,25 +273,27 @@ const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        
-        // Zmień tekst przycisku
-        submitBtn.textContent = 'Wysyłanie...';
-        submitBtn.disabled = true;
-        
-        // Symulacja wysyłania (Formspree obsłuży faktyczne wysłanie)
-        setTimeout(() => {
-            submitBtn.textContent = 'Wysłano ✓';
-            submitBtn.style.background = '#10b981';
+        if (submitBtn) {
+            const originalText = submitBtn.textContent;
             
-            // Resetuj po 3 sekundach
+            // Zmień tekst przycisku
+            submitBtn.textContent = 'Wysyłanie...';
+            submitBtn.disabled = true;
+            
+            // Symulacja wysyłania (Formspree obsłuży faktyczne wysłanie)
             setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.style.background = '';
-                submitBtn.disabled = false;
-                contactForm.reset();
-            }, 3000);
-        }, 1000);
+                submitBtn.textContent = 'Wysłano ✓';
+                submitBtn.style.background = '#10b981';
+                
+                // Resetuj po 3 sekundach
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                    contactForm.reset();
+                }, 3000);
+            }, 1000);
+        }
     });
     
     // Walidacja pól w czasie rzeczywistym
@@ -392,56 +451,6 @@ if (aboutStats) {
 }
 
 // ===============================
-// LAZY LOADING OBRAZÓW
-// ===============================
-
-const images = document.querySelectorAll('img[data-src]');
-
-const imageObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.classList.remove('lazy');
-            imageObserver.unobserve(img);
-        }
-    });
-});
-
-images.forEach(img => imageObserver.observe(img));
-
-// ===============================
-// PARTICLE EFFECT (OPCJONALNE)
-// ===============================
-
-function createParticle() {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-    
-    particle.style.cssText = `
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        pointer-events: none;
-        animation: float 6s infinite ease-in-out;
-    `;
-    
-    return particle;
-}
-
-// Dodaj CSS dla animacji particle
-const particleStyle = document.createElement('style');
-particleStyle.textContent = `
-    @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
-        50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
-    }
-`;
-document.head.appendChild(particleStyle);
-
-// ===============================
 // KONSOLA DEVELOPER
 // ===============================
 
@@ -455,34 +464,10 @@ Built with ❤️ using HTML, CSS & JavaScript
 `);
 
 // ===============================
-// PERFORMANCE MONITORING
-// ===============================
-
-window.addEventListener('load', () => {
-    // Sprawdź performance
-    if ('performance' in window) {
-        const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-        console.log(`⚡ Page loaded in ${loadTime}ms`);
-        
-        if (loadTime > 3000) {
-            console.warn('⚠️ Page load time is slower than optimal');
-        }
-    }
-});
-
-// ===============================
 // ERROR HANDLING
 // ===============================
 
 window.addEventListener('error', (e) => {
     console.error('Portfolio Error:', e.error);
 });
-
-// Service Worker dla offline functionality (opcjonalne)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(registration => console.log('SW registered'))
-            .catch(registrationError => console.log('SW registration failed'));
-    });
-}
+ 
