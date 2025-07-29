@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Budget Tracker - Michał Połujański</title>
+    <title>Budget Web Application - Michał Połujański</title>
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -25,8 +25,9 @@
         .project-subtitle {
             font-size: 1.2rem;
             color: #6b7280;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
+            line-height: 1.6;
         }
         .project-links {
             margin: 2rem 0;
@@ -69,10 +70,48 @@
             left: 20px;
             z-index: 1000;
         }
+        .screenshot-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border: 2px dashed #9ca3af;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .screenshot-placeholder:hover {
+            border-color: #6366f1;
+            background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+        }
+        .screenshot-placeholder .placeholder-content {
+            text-align: center;
+            color: #6b7280;
+        }
+        .screenshot-placeholder .placeholder-content i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #9ca3af;
+        }
+        .screenshot-placeholder .placeholder-content h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .screenshot-placeholder .placeholder-content p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
         @media (max-width: 768px) {
             .project-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+            .screenshot-placeholder {
+                height: 250px;
             }
         }
     </style>
@@ -85,17 +124,19 @@
     <section class="project-detail">
         <div class="container">
             <div class="project-header">
-                <h1 class="project-title">Home Budget Tracker</h1>
+                <h1 class="project-title">Budget Web Application</h1>
                 <p class="project-subtitle">
-                    Kompleksowa aplikacja webowa do zarządzania budżetem domowym z zaawansowanymi 
-                    funkcjami śledzenia wydatków i wizualizacji danych finansowych
+                    Nowoczesna, responsywna aplikacja webowa do zarządzania budżetem domowym. 
+                    Full-stack rozwiązanie z React.js frontend, Node.js backend, MongoDB bazą danych 
+                    i bezpieczną autoryzacją JWT. Projekt oferuje kompletny system finansowy 
+                    z raportami, eksportem danych i zaawansowaną analizą wydatków.
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/mikipmaster/budget-web-application" target="_blank" class="btn btn-primary">
                         <i class="fab fa-github"></i> Zobacz kod źródłowy
                     </a>
-                    <a href="#demo" class="btn btn-secondary">
-                        <i class="fas fa-play"></i> Live Demo
+                    <a href="#live-demo" class="btn btn-secondary">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
                     </a>
                 </div>
             </div>
@@ -104,110 +145,436 @@
                 <div class="project-info">
                     <h3>O Projekcie</h3>
                     <p>
-                        Home Budget Tracker to nowoczesna aplikacja webowa zaprojektowana z myślą 
-                        o efektywnym zarządzaniu finansami domowymi. Aplikacja oferuje intuicyjny 
-                        interfejs do śledzenia wydatków, planowania budżetu i analizy trendów finansowych.
+                        Budget Web Application to kompleksowe rozwiązanie full-stack stworzone 
+                        z myślą o osobach, które chcą świadomie kontrolować swoje finanse. 
+                        Aplikacja odpowiada na realną potrzebę rynku: brak prostych, darmowych 
+                        i spersonalizowanych rozwiązań finansowych dostępnych z poziomu przeglądarki.
                     </p>
                     <p>
-                        System wykorzystuje lokalne przechowywanie danych, zapewniając prywatność 
-                        użytkownika, jednocześnie oferując możliwość eksportu danych do różnych formatów. 
-                        Responsywny design sprawia, że aplikacja działa perfekcyjnie na wszystkich urządzeniach.
+                        System umożliwia szybkie rejestrowanie przychodów i wydatków, analizę 
+                        struktury wydatków oraz generowanie czytelnych raportów finansowych 
+                        z możliwością eksportu danych do CSV.
                     </p>
 
-                    <h3>Technologie Użyte</h3>
+                    <h3>Technologie Stack</h3>
                     <div class="project-tech">
-                        <span class="tech-tag">JavaScript ES6+</span>
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Mongoose</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">React Router</span>
                         <span class="tech-tag">Chart.js</span>
-                        <span class="tech-tag">Local Storage API</span>
-                        <span class="tech-tag">HTML5</span>
-                        <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">Responsive Design</span>
+                        <span class="tech-tag">Hostinger</span>
                     </div>
                 </div>
 
                 <div class="project-features">
                     <h3>Kluczowe Funkcjonalności</h3>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check-circle"></i> Śledzenie przychodów i wydatków</li>
-                        <li><i class="fas fa-check-circle"></i> Kategoryzacja transakcji</li>
-                        <li><i class="fas fa-check-circle"></i> Interaktywne wykresy i raporty</li>
-                        <li><i class="fas fa-check-circle"></i> Planowanie budżetu miesięcznego</li>
-                        <li><i class="fas fa-check-circle"></i> Powiadomienia o przekroczeniu budżetu</li>
-                        <li><i class="fas fa-check-circle"></i> Eksport danych do CSV/PDF</li>
-                        <li><i class="fas fa-check-circle"></i> Responsywny design (PWA ready)</li>
-                        <li><i class="fas fa-check-circle"></i> Offline functionality</li>
+                        <li><i class="fas fa-check-circle"></i> Bezpieczna rejestracja i logowanie (JWT)</li>
+                        <li><i class="fas fa-check-circle"></i> Dodawanie, edycja i usuwanie transakcji</li>
+                        <li><i class="fas fa-check-circle"></i> Historia transakcji z kategoryzacją</li>
+                        <li><i class="fas fa-check-circle"></i> Interaktywne raporty graficzne</li>
+                        <li><i class="fas fa-check-circle"></i> Dashboard z podsumowaniem finansowym</li>
+                        <li><i class="fas fa-check-circle"></i> Filtrowanie i sortowanie danych</li>
+                        <li><i class="fas fa-check-circle"></i> Eksport danych do CSV</li>
+                        <li><i class="fas fa-check-circle"></i> Responsywny design (mobile-first)</li>
+                        <li><i class="fas fa-check-circle"></i> Zabezpieczenie tras (ProtectedRoute)</li>
+                        <li><i class="fas fa-check-circle"></i> Obsługa błędów i walidacja</li>
                     </ul>
 
-                    <h3>Analiza Finansowa</h3>
+                    <h3>Architektura i Bezpieczeństwo</h3>
                     <p>
-                        Aplikacja oferuje zaawansowane narzędzia analizy finansowej, w tym 
-                        trendy wydatków, prognozy budżetowe i automatyczne kategoryzowanie 
-                        transakcji. Użytkownicy mogą łatwo zidentyfikować obszary oszczędności.
+                        Aplikacja została zbudowana w oparciu o zasady SOLID i DRY. 
+                        Frontend wykorzystuje React Context do zarządzania stanem, 
+                        podczas gdy backend oferuje RESTful API z middleware do autoryzacji. 
+                        Bezpieczeństwo zapewniają JWT tokeny, walidacja danych i ochrona przed XSS/CSRF.
                     </p>
                 </div>
             </div>
 
-            <div class="project-showcase">
-                <h3>Główne Moduły Aplikacji</h3>
-                <div class="modules-grid">
-                    <div class="module">
-                        <div class="module-icon">
-                            <i class="fas fa-plus-circle"></i>
+            <!-- SCREENSHOT 1 - DASHBOARD -->
+            <div class="project-screenshot">
+                <img src="../images/projects/budget-app.jpg" alt="Budget App Dashboard - główny ekran z wykresami finansowymi" loading="lazy">
+                <div class="screenshot-caption">
+                    <h4>Dashboard Aplikacji Budżetowej</h4>
+                    <p>Główny ekran z wykresami, saldami i statystykami finansowymi</p>
+                </div>
+            </div>
+
+
+
+            <!-- FEATURE SECTIONS WITH SCREENSHOTS -->
+            <div class="features-detailed">
+                
+                 <!-- FEATURE 1 - TRANSACTION MANAGEMENT -->
+                <div class="feature-section">
+                    <div class="feature-content">
+                        <div class="feature-info">
+                            <div class="feature-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h3>Zarządzanie Transakcjami</h3>
+                            <p>
+                                Intuicyjny system dodawania, edycji i kategoryzacji transakcji. 
+                                Użytkownicy mogą łatwo rejestrować przychody i wydatki z automatyczną 
+                                walidacją danych i przypisywaniem do odpowiednich kategorii finansowych.
+                            </p>
+                            <ul class="feature-details">
+                                <li><i class="fas fa-plus"></i> Szybkie dodawanie transakcji</li>
+                                <li><i class="fas fa-edit"></i> Edycja i usuwanie zapisów</li>
+                                <li><i class="fas fa-tags"></i> System kategorii i tagów</li>
+                                <li><i class="fas fa-calendar"></i> Filtrowanie po datach</li>
+                                <li><i class="fas fa-search"></i> Wyszukiwanie transakcji</li>
+                            </ul>
                         </div>
-                        <h4>Dodawanie Transakcji</h4>
-                        <p>Szybkie dodawanie przychodów i wydatków z automatyczną kategoryzacją</p>
                     </div>
-                    <div class="module">
-                        <div class="module-icon">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
-                        <h4>Wizualizacja Danych</h4>
-                        <p>Interaktywne wykresy pokazujące struktur wydatków i trendy</p>
+                    
+                    <!-- SCREENSHOT 2 - TRANSACTIONS -->
+                    <div class="screenshot-placeholder">
+                        <img src="../images/projects/budgetapp4.jpg" alt="Budget App - zarządzanie transakcjami" loading="lazy">
                     </div>
-                    <div class="module">
-                        <div class="module-icon">
-                            <i class="fas fa-target"></i>
+                </div>
+
+                <!-- FEATURE 2 - CHARTS AND REPORTS -->
+                <div class="feature-section">
+                    <div class="feature-content">
+                        <div class="feature-info">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h3>Raporty i Analiza Danych</h3>
+                            <p>
+                                Zaawansowany system raportowania z interaktywnymi wykresami 
+                                wykorzystującymi Chart.js. Aplikacja generuje wykresy słupkowe 
+                                i kołowe pokazujące strukturę wydatków, trendy finansowe 
+                                i porównania okresowe.
+                            </p>
+                            <ul class="feature-details">
+                                <li><i class="fas fa-chart-bar"></i> Wykresy słupkowe przychodów/wydatków</li>
+                                <li><i class="fas fa-chart-pie"></i> Analiza kategorii wydatków</li>
+                                <li><i class="fas fa-arrow-trend-up"></i> Trendy finansowe w czasie</li>
+                                <li><i class="fas fa-calendar-week"></i> Raporty miesięczne/roczne</li>
+                                <li><i class="fas fa-download"></i> Eksport raportów do CSV</li>
+                            </ul>
                         </div>
-                        <h4>Planowanie Budżetu</h4>
-                        <p>Ustalanie limitów wydatków dla różnych kategorii</p>
                     </div>
-                    <div class="module">
-                        <div class="module-icon">
-                            <i class="fas fa-file-export"></i>
+                    
+                    <div class="screenshot-placeholder">
+                        <img src="../images/projects/budgetapp2.jpg" alt="Budget App - wykresy i raporty finansowe" loading="lazy">
+                    </div>
+
+                    <div class="screenshot-placeholder">
+                        <img src="../images/projects/budgetapp3.jpg" alt="Budget App - wykresy i raporty finansowe" loading="lazy">
+                    </div>
+
+
+                <!-- FEATURE 3 - USER AUTHENTICATION -->
+                <div class="feature-section">
+                    <div class="feature-content">
+                        <div class="feature-info">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Bezpieczna Autoryzacja</h3>
+                            <p>
+                                Kompleksowy system autoryzacji wykorzystujący JWT (JSON Web Tokens) 
+                                z hashowaniem haseł, walidacją formularzy i zabezpieczeniem tras. 
+                                Aplikacja implementuje ochronę przed XSS, CSRF i zapewnia 
+                                bezpieczne przechowywanie danych użytkowników.
+                            </p>
+                            <ul class="feature-details">
+                                <li><i class="fas fa-key"></i> JWT Authentication & Authorization</li>
+                                <li><i class="fas fa-lock"></i> Hashowanie haseł (bcrypt)</li>
+                                <li><i class="fas fa-user-shield"></i> Protected Routes</li>
+                                <li><i class="fas fa-eye-slash"></i> Ochrona przed XSS/CSRF</li>
+                                <li><i class="fas fa-database"></i> Secure MongoDB integration</li>
+                            </ul>
                         </div>
-                        <h4>Eksport Raportów</h4>
-                        <p>Generowanie szczegółowych raportów finansowych w różnych formatach</p>
+                    </div>
+                    
+                    <!-- SCREENSHOT 4 - LOGIN/REGISTER -->
+                    <div class="screenshot-placeholder">
+                        <div class="placeholder-content">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <h4>Authentication Screenshot</h4>
+                            <p>Wklej tutaj screenshot strony logowania/rejestracji</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TECHNICAL ARCHITECTURE -->
+            <div class="technical-section">
+                <h3>Architektura Techniczna</h3>
+                <div class="architecture-grid">
+                    <div class="arch-component">
+                        <div class="arch-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h4>Frontend - React.js</h4>
+                        <p>Single Page Application z React Router, Context API do zarządzania stanem, 
+                        Tailwind CSS do stylowania i responsywnego designu</p>
+                        <ul>
+                            <li>React Hooks (useState, useEffect, useContext)</li>
+                            <li>Protected Routes & Navigation Guards</li>
+                            <li>Component-based Architecture</li>
+                            <li>Mobile-first Responsive Design</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="arch-component">
+                        <div class="arch-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4>Backend - Node.js/Express</h4>
+                        <p>RESTful API z Express.js, middleware do autoryzacji, 
+                        walidacji danych i obsługi błędów</p>
+                        <ul>
+                            <li>Express.js RESTful API</li>
+                            <li>JWT Middleware & Auth Guards</li>
+                            <li>Data Validation & Sanitization</li>
+                            <li>Error Handling & Logging</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="arch-component">
+                        <div class="arch-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>Database - MongoDB</h4>
+                        <p>NoSQL baza danych z Mongoose ODM, modelowanie relacji 
+                        między użytkownikami a transakcjami</p>
+                        <ul>
+                            <li>Mongoose ODM & Schema Design</li>
+                            <li>User-Transaction Relationships</li>
+                            <li>Data Indexing & Performance</li>
+                            <li>Backup & Data Security</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="arch-component">
+                        <div class="arch-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h4>Deployment - Hostinger</h4>
+                        <p>Hosting aplikacji na platformie Hostinger z konfiguracją 
+                        środowiska produkcyjnego i zmiennymi środowiskowymi</p>
+                        <ul>
+                            <li>Production Environment Setup</li>
+                            <li>Environment Variables</li>
+                            <li>SSL Certificates & Security</li>
+                            <li>Performance Optimization</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+
+            <!-- DEVELOPMENT PROCESS -->
+            <div class="development-section">
+                <h3>Proces Developmentu</h3>
+                <div class="process-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Planowanie & Analiza</h4>
+                        <p>Analiza potrzeb rynku, projektowanie architektury, wybór stack'u technologicznego</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Backend Development</h4>
+                        <p>Implementacja API, modeli danych, autoryzacji JWT i zabezpieczeń</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>Frontend Development</h4>
+                        <p>Tworzenie komponentów React, implementacja routingu i responsywnego UI</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Testing & Deployment</h4>
+                        <p>Testy jednostkowe, funkcjonalne, deployment na Hostinger</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LESSONS LEARNED -->
+            <div class="lessons-section">
+                <h3>Umiejętności i Doświadczenie</h3>
+                <div class="skills-gained">
+                    <div class="skill-item">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Full-Stack Development</h4>
+                        <p>Kompleksowe doświadczenie w tworzeniu aplikacji od frontendu do backendu</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Security Implementation</h4>
+                        <p>Implementacja bezpiecznej autoryzacji, walidacji i ochrony przed atakami</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Data Visualization</h4>
+                        <p>Tworzenie interaktywnych wykresów i raportów finansowych</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h4>Responsive Design</h4>
+                        <p>Projektowanie interfejsów dostosowanych do wszystkich urządzeń</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <style>
-        .project-showcase {
-            margin-top: 4rem;
-            text-align: center;
+        .feature-section {
+            margin: 4rem 0;
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
-        .modules-grid {
+        
+        .feature-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-details {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .feature-details li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            color: #6b7280;
+        }
+        
+        .feature-details li i {
+            color: #10b981;
+            margin-right: 0.75rem;
+            width: 16px;
+        }
+        
+        .technical-section {
+            margin: 4rem 0;
+            background: #f8fafc;
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .arch-component {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .arch-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .arch-component h4 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .arch-component ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .arch-component ul li {
+            padding: 0.25rem 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .arch-component ul li::before {
+            content: "→";
+            color: #6366f1;
+            margin-right: 0.5rem;
+        }
+        
+        .development-section {
+            margin: 4rem 0;
+        }
+        
+        .process-timeline {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
-        .module {
-            background: white;
+        
+        .timeline-item {
+            text-align: center;
             padding: 2rem;
+            background: white;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .module:hover {
-            transform: translateY(-5px);
-        }
-        .module-icon {
+        
+        .timeline-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #10b981, #059669);
+            background: linear-gradient(135deg, #f59e0b, #d97706);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -216,9 +583,60 @@
             font-size: 1.5rem;
             margin: 0 auto 1rem;
         }
-        .module h4 {
+        
+        .timeline-item h4 {
             color: #1f2937;
             margin-bottom: 0.5rem;
+        }
+        
+        .lessons-section {
+            margin: 4rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        
+        .skills-gained {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .skill-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #fbbf24;
+        }
+        
+        .skill-item h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .feature-section {
+                padding: 2rem 1rem;
+            }
+            
+            .technical-section,
+            .lessons-section {
+                padding: 2rem 1rem;
+            }
+            
+            .architecture-grid,
+            .process-timeline,
+            .skills-gained {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </body>

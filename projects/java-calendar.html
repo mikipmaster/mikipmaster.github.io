@@ -87,15 +87,15 @@
             <div class="project-header">
                 <h1 class="project-title">Java Calendar Application</h1>
                 <p class="project-subtitle">
-                    Zaawansowana aplikacja desktopowa kalendarza stworzona w Javie z pełnym 
-                    zarządzaniem wydarzeniami, przypomnieniami i eksportem danych
+                    Zaawansowana aplikacja desktopowa kalendarza stworzona w JavaFX z pełnym 
+                    zarządzaniem wydarzeniami, przypomnieniami i persistentnym przechowywaniem danych
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/mikipmaster/projektKalendarza" target="_blank" class="btn btn-primary">
                         <i class="fab fa-github"></i> Zobacz kod źródłowy
                     </a>
                     <a href="#demo" class="btn btn-secondary">
-                        <i class="fas fa-download"></i> Pobierz aplikację
+                        <i class="fas fa-download"></i> Dokumentacja
                     </a>
                 </div>
             </div>
@@ -105,19 +105,23 @@
                     <h3>O Projekcie</h3>
                     <p>
                         Java Calendar Application to kompleksowa aplikacja desktopowa stworzona 
-                        w języku Java z wykorzystaniem biblioteki Swing. Projekt demonstruje 
-                        zaawansowane techniki programowania obiektowego oraz zarządzania danymi.
+                        w języku Java z wykorzystaniem biblioteki JavaFX do budowy nowoczesnego 
+                        interfejsu użytkownika. Projekt demonstruje zaawansowane techniki 
+                        programowania obiektowego oraz zarządzania danymi w aplikacjach desktop.
                     </p>
                     <p>
                         Aplikacja oferuje pełnowartościowy system kalendarza z możliwością 
-                        zarządzania wydarzeniami, ustawiania przypomnień i eksportu danych. 
-                        Interface użytkownika jest intuicyjny i przystosowany do codziennego użytku.
+                        zarządzania wydarzeniami, ustawiania przypomnień i persistentnego 
+                        przechowywania danych. Interface użytkownika został zaprojektowany 
+                        zgodnie z zasadami Material Design i jest intuicyjny w obsłudze.
                     </p>
 
                     <h3>Technologie Użyte</h3>
                     <div class="project-tech">
-                        <span class="tech-tag">Java SE</span>
-                        <span class="tech-tag">Swing GUI</span>
+                        <span class="tech-tag">Java 11+</span>
+                        <span class="tech-tag">JavaFX</span>
+                        <span class="tech-tag">FXML</span>
+                        <span class="tech-tag">CSS Styling</span>
                         <span class="tech-tag">File I/O</span>
                         <span class="tech-tag">Collections Framework</span>
                         <span class="tech-tag">OOP Design Patterns</span>
@@ -128,22 +132,23 @@
                 <div class="project-features">
                     <h3>Kluczowe Funkcjonalności</h3>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check-circle"></i> Zarządzanie wydarzeniami i spotkaniami</li>
-                        <li><i class="fas fa-check-circle"></i> System przypomnień i notyfikacji</li>
-                        <li><i class="fas fa-check-circle"></i> Kategoryzacja wydarzeń według typu</li>
+                        <li><i class="fas fa-check-circle"></i> Tworzenie i edycja wydarzeń kalendarzowych</li>
+                        <li><i class="fas fa-check-circle"></i> System kategorii z kolorowym oznaczeniem</li>
+                        <li><i class="fas fa-check-circle"></i> Przypomnienia z konfigurowalnymi alertami</li>
                         <li><i class="fas fa-check-circle"></i> Widoki: miesięczny, tygodniowy, dzienny</li>
-                        <li><i class="fas fa-check-circle"></i> Eksport danych do różnych formatów</li>
-                        <li><i class="fas fa-check-circle"></i> Import z zewnętrznych kalendarzy</li>
-                        <li><i class="fas fa-check-circle"></i> Wyszukiwanie wydarzeń</li>
-                        <li><i class="fas fa-check-circle"></i> Backup i przywracanie danych</li>
+                        <li><i class="fas fa-check-circle"></i> Persistentne przechowywanie w plikach</li>
+                        <li><i class="fas fa-check-circle"></i> Eksport wydarzeń do CSV</li>
+                        <li><i class="fas fa-check-circle"></i> Wyszukiwanie i filtrowanie wydarzeń</li>
+                        <li><i class="fas fa-check-circle"></i> Responsywny interface JavaFX</li>
                     </ul>
 
                     <h3>Architektura Aplikacji</h3>
                     <p>
-                        Projekt wykorzystuje wzorzec MVC (Model-View-Controller) dla 
-                        separation of concerns. Dane są przechowywane w plikach z możliwością 
-                        serialization obiektów Java. Interfejs został zaprojektowany zgodnie 
-                        z zasadami usability.
+                        Projekt wykorzystuje wzorzec MVC (Model-View-Controller) z JavaFX 
+                        jako warstwą prezentacji. Kontrolery zarządzają logiką biznesową, 
+                        podczas gdy widoki FXML definiują strukturę interfejsu. 
+                        Dane są serializowane i przechowywane lokalnie z wykorzystaniem 
+                        Java I/O operations.
                     </p>
                 </div>
             </div>
@@ -155,29 +160,29 @@
                         <div class="component-icon">
                             <i class="fas fa-calendar-alt"></i>
                         </div>
-                        <h4>Calendar View</h4>
-                        <p>Intuicyjny widok kalendarza z nawigacją między miesiącami i latami</p>
+                        <h4>JavaFX Calendar View</h4>
+                        <p>Nowoczesny interfejs kalendarza z nawigacją między miesiącami i latami, stylowany CSS</p>
                     </div>
                     <div class="component">
                         <div class="component-icon">
                             <i class="fas fa-plus-square"></i>
                         </div>
-                        <h4>Event Management</h4>
-                        <p>Tworzenie, edycja i usuwanie wydarzeń z zaawansowanymi opcjami</p>
+                        <h4>Event Management System</h4>
+                        <p>Tworzenie, edycja i usuwanie wydarzeń z formularzami FXML i walidacją danych</p>
                     </div>
                     <div class="component">
                         <div class="component-icon">
                             <i class="fas fa-bell"></i>
                         </div>
-                        <h4>Reminder System</h4>
-                        <p>Elastyczny system przypomnień z różnymi opcjami powiadomień</p>
+                        <h4>Alert & Reminder System</h4>
+                        <p>Elastyczny system przypomnień z JavaFX Alert API i konfigurowalnymi powiadomieniami</p>
                     </div>
                     <div class="component">
                         <div class="component-icon">
                             <i class="fas fa-database"></i>
                         </div>
-                        <h4>Data Persistence</h4>
-                        <p>Niezawodne przechowywanie danych z automatycznym backup</p>
+                        <h4>Data Persistence Layer</h4>
+                        <p>Serializacja obiektów Java z automatycznym backup i odczytem z plików</p>
                     </div>
                 </div>
 
@@ -185,16 +190,42 @@
                     <h3>Szczegóły Techniczne</h3>
                     <div class="details-grid">
                         <div class="detail-card">
-                            <h4>Wzorce Projektowe</h4>
-                            <p>Implementacja wzorców Observer, Singleton i Factory dla lepszej architektury kodu</p>
+                            <h4>JavaFX Architecture</h4>
+                            <p>Wykorzystanie FXML do separacji logiki od interfejsu, CSS do stylowania komponentów oraz kontrolerów do zarządzania interakcjami</p>
                         </div>
                         <div class="detail-card">
-                            <h4>Zarządzanie Pamięcią</h4>
-                            <p>Optymalizacja wykorzystania pamięci z proper garbage collection handling</p>
+                            <h4>Design Patterns</h4>
+                            <p>Implementacja wzorców MVC, Observer, Singleton i Factory dla modularnej i łatwo testowalnej architektury</p>
                         </div>
                         <div class="detail-card">
-                            <h4>Exception Handling</h4>
-                            <p>Kompleksowa obsługa błędów z user-friendly komunikatami</p>
+                            <h4>Data Management</h4>
+                            <p>Wykorzystanie Java Collections Framework, File I/O operations i Object Serialization dla efektywnego zarządzania danymi</p>
+                        </div>
+                        <div class="detail-card">
+                            <h4>User Experience</h4>
+                            <p>Responsywny design z JavaFX binding, smooth animations i intuitive controls zgodne z JavaFX design guidelines</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="code-highlights">
+                    <h3>Kluczowe Implementacje</h3>
+                    <div class="highlight-grid">
+                        <div class="highlight-item">
+                            <h4><i class="fas fa-code"></i> FXML Controllers</h4>
+                            <p>Implementacja kontrolerów JavaFX z @FXML annotations do zarządzania komponentami UI i event handling</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4><i class="fas fa-palette"></i> CSS Styling</h4>
+                            <p>Custom style sheets dla JavaFX komponentów z modern flat design i responsywnymi kolorami</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4><i class="fas fa-save"></i> Data Persistence</h4>
+                            <p>Wykorzystanie ObjectOutputStream/ObjectInputStream do serializacji i deserializacji wydarzeń kalendarza</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4><i class="fas fa-bell"></i> Alert System</h4>
+                            <p>JavaFX Alert API z custom dialogs do wyświetlania przypomnień i powiadomień użytkownika</p>
                         </div>
                     </div>
                 </div>
@@ -244,7 +275,7 @@
         }
         .details-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -257,6 +288,31 @@
         .detail-card h4 {
             color: #1f2937;
             margin-bottom: 1rem;
+        }
+        .code-highlights {
+            margin-top: 4rem;
+        }
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .highlight-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: left;
+        }
+        .highlight-item h4 {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .highlight-item i {
+            color: #fbbf24;
         }
     </style>
 </body>

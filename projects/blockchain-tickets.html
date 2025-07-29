@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blockchain Ticket System - Michał Połujański</title>
+    <title>Blockchain Ticket App - Michał Połujański</title>
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -25,8 +25,9 @@
         .project-subtitle {
             font-size: 1.2rem;
             color: #6b7280;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
+            line-height: 1.6;
         }
         .project-links {
             margin: 2rem 0;
@@ -69,6 +70,31 @@
             left: 20px;
             z-index: 1000;
         }
+        .screenshot-placeholder {
+            position: relative !important;
+            width: 100% !important;
+            height: auto !important;
+            background: none !important;
+            border: none !important;
+            display: block !important;
+            margin: 2rem 0 !important;
+            z-index: 2;
+        }
+        .screenshot-placeholder img {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+            border-radius: 12px !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+            display: block !important;
+            margin: 0 !important;
+            position: relative !important;
+            z-index: 3;
+        }
+        .screenshot-placeholder:hover img {
+            transform: scale(1.02) !important;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15) !important;
+        }
         @media (max-width: 768px) {
             .project-content {
                 grid-template-columns: 1fr;
@@ -85,17 +111,19 @@
     <section class="project-detail">
         <div class="container">
             <div class="project-header">
-                <h1 class="project-title">Blockchain Ticket System</h1>
+                <h1 class="project-title">Blockchain Ticket Application</h1>
                 <p class="project-subtitle">
-                    Nowoczesna aplikacja do zakupu biletów wykorzystująca technologię blockchain 
-                    i smart contracty dla maksymalnego bezpieczeństwa transakcji
+                    Zdecentralizowana aplikacja webowa do zakupu i weryfikacji biletów wykorzystująca 
+                    technologię blockchain Ethereum. Projekt implementuje smart contracty w Solidity, 
+                    integrację z Web3.js i MetaMask dla bezpiecznych transakcji kryptowalutowych. 
+                    System zapewnia przejrzystość, niezmienność i eliminuje możliwość fałszowania biletów.
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/mikipmaster/blockchain-ticket-app" target="_blank" class="btn btn-primary">
                         <i class="fab fa-github"></i> Zobacz kod źródłowy
                     </a>
-                    <a href="#demo" class="btn btn-secondary">
-                        <i class="fas fa-play"></i> Live Demo
+                    <a href="#live-demo" class="btn btn-secondary">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
                     </a>
                 </div>
             </div>
@@ -104,112 +132,724 @@
                 <div class="project-info">
                     <h3>O Projekcie</h3>
                     <p>
-                        Blockchain Ticket System to zaawansowana aplikacja webowa, która rewolucjonizuje 
-                        sposób zakupu i zarządzania biletami. Wykorzystując technologię blockchain 
-                        Ethereum, aplikacja zapewnia pełną transparentność i bezpieczeństwo transakcji.
+                        Blockchain Ticket Application to nowoczesna dApp (Decentralized Application) 
+                        stworzona na blockchainie Ethereum. Projekt rozwiązuje kluczowe problemy 
+                        tradycyjnego systemu sprzedaży biletów: brak transparentności, możliwość 
+                        fałszowania, wysokie prowizje pośredników i brak kontroli nad odsprzedażą.
                     </p>
                     <p>
-                        System eliminuje możliwość podrabiania biletów dzięki unikalnemu systemowi 
-                        weryfikacji opartemu na smart contractach. Każdy bilet jest reprezentowany 
-                        jako unikalny token na blockchainie, co gwarantuje jego autentyczność.
+                        Aplikacja wykorzystuje smart contracty do automatyzacji procesów zakupu 
+                        i weryfikacji, eliminując potrzebę zaufania do centralnego podmiotu. 
+                        Każdy bilet jest reprezentowany jako unikalny token na blockchainie, 
+                        co gwarantuje jego autentyczność i umożliwia łatwe sprawdzenie właściciela.
                     </p>
 
-                    <h3>Technologie Użyte</h3>
+                    <h3>Stack Technologiczny</h3>
                     <div class="project-tech">
-                        <span class="tech-tag">JavaScript ES6+</span>
-                        <span class="tech-tag">Web3.js</span>
-                        <span class="tech-tag">Solidity</span>
+                        <span class="tech-tag">Solidity ^0.8.0</span>
+                        <span class="tech-tag">Web3.js 1.7.4</span>
                         <span class="tech-tag">Ethereum</span>
                         <span class="tech-tag">MetaMask</span>
+                        <span class="tech-tag">Truffle Suite</span>
+                        <span class="tech-tag">Ganache</span>
                         <span class="tech-tag">HTML5</span>
                         <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript ES6+</span>
+                        <span class="tech-tag">Bootstrap 5</span>
+                        <span class="tech-tag">OpenZeppelin</span>
                     </div>
                 </div>
 
                 <div class="project-features">
                     <h3>Kluczowe Funkcjonalności</h3>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check-circle"></i> Zakup biletów za pomocą kryptowalut</li>
+                        <li><i class="fas fa-check-circle"></i> Smart Contract deployment na Ethereum</li>
                         <li><i class="fas fa-check-circle"></i> Integracja z portfelem MetaMask</li>
-                        <li><i class="fas fa-check-circle"></i> Smart contracty dla bezpieczeństwa</li>
+                        <li><i class="fas fa-check-circle"></i> Zakup biletów za pomocą ETH</li>
                         <li><i class="fas fa-check-circle"></i> Weryfikacja autentyczności biletów</li>
-                        <li><i class="fas fa-check-circle"></i> Historia wszystkich transakcji</li>
-                        <li><i class="fas fa-check-circle"></i> Responsywny interfejs użytkownika</li>
-                        <li><i class="fas fa-check-circle"></i> Real-time aktualizacje statusu</li>
-                        <li><i class="fas fa-check-circle"></i> Automatyczne potwierdzenia zakupu</li>
+                        <li><i class="fas fa-check-circle"></i> Transfer ownership biletów</li>
+                        <li><i class="fas fa-check-circle"></i> Event management przez właściciela</li>
+                        <li><i class="fas fa-check-circle"></i> Real-time transaction tracking</li>
+                        <li><i class="fas fa-check-circle"></i> Gas optimization techniques</li>
+                        <li><i class="fas fa-check-circle"></i> Security patterns implementation</li>
+                        <li><i class="fas fa-check-circle"></i> Error handling & user feedback</li>
                     </ul>
 
-                    <h3>Wyzwania Techniczne</h3>
+                    <h3>Blockchain Architecture</h3>
                     <p>
-                        Największym wyzwaniem było zaprojektowanie architektury smart contractów, 
-                        która byłaby zarówno bezpieczna, jak i efektywna pod względem kosztów gas. 
-                        Implementacja wymagała głębokiego zrozumienia protokołu Ethereum i 
-                        optymalizacji kodu Solidity.
+                        Aplikacja wykorzystuje Ethereum Virtual Machine (EVM) do wykonywania 
+                        smart contractów. Implementuje wzorce bezpieczeństwa OpenZeppelin 
+                        oraz optymalizacje gas cost. System jest zaprojektowany z myślą 
+                        o skalowalności i możliwości migracji na Layer 2 solutions.
                     </p>
                 </div>
             </div>
 
+            <!-- SCREENSHOT 1 - MAIN INTERFACE -->
             <div class="project-showcase">
-                <h3>Jak Działa System</h3>
-                <div class="process-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h4>Połączenie Portfela</h4>
-                        <p>Użytkownik łączy swój portfel MetaMask z aplikacją</p>
+                <h3>Główny Interface Aplikacji</h3>
+                <p>Strona główna aplikacji prezentuje dostępne wydarzenia z możliwością zakupu biletów. 
+                Interface automatycznie wykrywa połączenie z MetaMask i wyświetla informacje o stanie konta. Wygląd aplikacji nie był dla mnie ważny
+            bo projekt powstał aby sprawdzić umiejętności i rozwiązywać pewien problem. Celem było udostępnienie działającej usługi, stąd wygląd prosty
+        i kolorowy</p>
+                
+                <div class="screenshot-placeholder">
+                    <img src="../images/projects/blockchain_account.jpg" alt="Blockchain Ticket App - główny interface z listą wydarzeń" loading="lazy">
+                </div>
+            </div>
+
+            <!-- FEATURE SECTIONS WITH SCREENSHOTS -->
+            <div class="features-detailed">
+                
+                <!-- FEATURE 1 - SMART CONTRACT INTERACTION -->
+                <div class="feature-section">
+                    <div class="feature-content">
+                        <div class="feature-info">
+                            <div class="feature-icon">
+                                <i class="fab fa-ethereum"></i>
+                            </div>
+                            <h3>Smart Contract Integration</h3>
+                            <p>
+                                Serce aplikacji stanowi smart contract napisany w Solidity, 
+                                który zarządza całym cyklem życia biletów. Contract implementuje 
+                                wzorce bezpieczeństwa Access Control, Reentrancy Guard i Pausable 
+                                z biblioteki OpenZeppelin dla maksymalnego bezpieczeństwa.
+                            </p>
+                            <ul class="feature-details">
+                                <li><i class="fas fa-shield-alt"></i> OpenZeppelin security patterns</li>
+                                <li><i class="fas fa-gas-pump"></i> Gas optimization techniques</li>
+                                <li><i class="fas fa-lock"></i> Access control modifiers</li>
+                                <li><i class="fas fa-pause"></i> Emergency pause functionality</li>
+                                <li><i class="fas fa-coins"></i> Automated ETH transactions</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h4>Wybór Biletu</h4>
-                        <p>Przeglądanie dostępnych wydarzeń i wybór odpowiedniego biletu</p>
+                    
+                    <!-- SCREENSHOT 2 - SMART CONTRACT -->
+                    <div class="screenshot-placeholder">
+                        <img src="../images/projects/blockchain3.jpg" alt="Blockchain Ticket App - interakcja ze smart contractem" loading="lazy">
                     </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h4>Transakcja Blockchain</h4>
-                        <p>Bezpieczna płatność przez smart contract na blockchainie Ethereum</p>
+                </div>
+
+                <!-- FEATURE 2 - METAMASK INTEGRATION -->
+                <div class="feature-section">
+                    <div class="feature-content">
+                        <div class="feature-info">
+                            <div class="feature-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <h3>MetaMask & Web3 Integration</h3>
+                            <p>
+                                Aplikacja wykorzystuje Web3.js do komunikacji z blockchainem Ethereum 
+                                i integracją z portfelem MetaMask. System automatycznie wykrywa 
+                                dostępność Web3 provider, zarządza połączeniami i obsługuje 
+                                zmiany sieci oraz kont użytkownika.
+                            </p>
+                            <ul class="feature-details">
+                                <li><i class="fas fa-plug"></i> Automatic Web3 provider detection</li>
+                                <li><i class="fas fa-network-wired"></i> Network switching support</li>
+                                <li><i class="fas fa-user-check"></i> Account change handling</li>
+                                <li><i class="fas fa-sync"></i> Real-time balance updates</li>
+                                <li><i class="fas fa-shield"></i> Secure transaction signing</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <h4>Potwierdzenie</h4>
-                        <p>Otrzymanie unikalnego tokenu biletu z możliwością weryfikacji</p>
+                    
+                    <!-- SCREENSHOT 3 - METAMASK -->
+                    <div class="screenshot-placeholder">
+                        <img src="../images/projects/blockchain4.jpg" alt="Blockchain Ticket App - integracja z MetaMask" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- FEATURE 3 - TICKET VERIFICATION -->
+                <div class="feature-section">
+                    <div class="feature-content">
+                        <div class="feature-info">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h3>Ticket Verification System</h3>
+                            <p>
+                                Zaawansowany system weryfikacji biletów wykorzystujący blockchain 
+                                jako single source of truth. Każdy bilet ma unikalny identifier 
+                                i może być zweryfikowany przez sprawdzenie stanu na blockchainie, 
+                                eliminując możliwość podrabiania lub duplikowania.
+                            </p>
+                            <ul class="feature-details">
+                                <li><i class="fas fa-fingerprint"></i> Unique ticket identifiers</li>
+                                <li><i class="fas fa-search"></i> Blockchain state verification</li>
+                                <li><i class="fas fa-history"></i> Transaction history tracking</li>
+                                <li><i class="fas fa-exchange-alt"></i> Ownership transfer validation</li>
+                                <li><i class="fas fa-ban"></i> Anti-counterfeit protection</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- SCREENSHOT 4 - VERIFICATION -->
+                    <div class="screenshot-placeholder">
+                        <img src="../images/projects/blockchain2.jpg" alt="Blockchain Ticket App - system weryfikacji biletów" loading="lazy">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TECHNICAL ARCHITECTURE -->
+            <div class="technical-section">
+                <h3>Architektura Techniczna</h3>
+                <div class="architecture-grid">
+                    <div class="arch-component">
+                        <div class="arch-icon">
+                            <i class="fab fa-ethereum"></i>
+                        </div>
+                        <h4>Smart Contracts - Solidity</h4>
+                        <p>Core business logic implementowany w Solidity ^0.8.0 z wykorzystaniem 
+                        OpenZeppelin contracts dla bezpieczeństwa</p>
+                        <ul>
+                            <li>Event creation and management</li>
+                            <li>Ticket minting and transfers</li>
+                            <li>Payment processing in ETH</li>
+                            <li>Access control & modifiers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="arch-component">
+                        <div class="arch-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>Frontend - Web3.js</h4>
+                        <p>JavaScript frontend z Web3.js 1.7.4 do komunikacji z blockchainem 
+                        i Bootstrap 5 dla responsywnego UI</p>
+                        <ul>
+                            <li>Web3.js blockchain interaction</li>
+                            <li>MetaMask integration layer</li>
+                            <li>Responsive Bootstrap UI</li>
+                            <li>Real-time transaction updates</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="arch-component">
+                        <div class="arch-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Development - Truffle Suite</h4>
+                        <p>Kompletne środowisko deweloperskie z Truffle dla kompilacji, 
+                        deploymentu i testowania smart contractów</p>
+                        <ul>
+                            <li>Truffle compilation framework</li>
+                            <li>Ganache local blockchain</li>
+                            <li>Automated testing suite</li>
+                            <li>Contract migration scripts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="arch-component">
+                        <div class="arch-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Security - OpenZeppelin</h4>
+                        <p>Implementacja sprawdzonych wzorców bezpieczeństwa z biblioteki 
+                        OpenZeppelin dla ochrony przed znanymi atakami</p>
+                        <ul>
+                            <li>Access Control patterns</li>
+                            <li>Reentrancy protection</li>
+                            <li>Pausable functionality</li>
+                            <li>Safe math operations</li>
+                        </ul>
                     </div>
                 </div>
             </div>
+
+            <!-- SMART CONTRACT DETAILS -->
+            <div class="contract-section">
+                <h3>Smart Contract Implementation</h3>
+                <div class="contract-details">
+                    <div class="contract-functions">
+                        <h4>Główne Funkcje Contractu</h4>
+                        <div class="function-grid">
+                            <div class="function-item">
+                                <div class="function-header">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>createEvent()</span>
+                                </div>
+                                <p>Tworzenie nowego wydarzenia z określoną liczbą biletów i ceną</p>
+                            </div>
+                            <div class="function-item">
+                                <div class="function-header">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>buyTicket()</span>
+                                </div>
+                                <p>Zakup biletu z automatyczną weryfikacją płatności i transferem ETH</p>
+                            </div>
+                            <div class="function-item">
+                                <div class="function-header">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>transferTicket()</span>
+                                </div>
+                                <p>Transfer własności biletu między użytkownikami</p>
+                            </div>
+                            <div class="function-item">
+                                <div class="function-header">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>verifyTicket()</span>
+                                </div>
+                                <p>Weryfikacja autentyczności i ważności biletu</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contract-security">
+                        <h4>Implementowane Wzorce Bezpieczeństwa</h4>
+                        <div class="security-features">
+                            <div class="security-item">
+                                <i class="fas fa-lock"></i>
+                                <h5>Access Control</h5>
+                                <p>Ograniczenie dostępu do krytycznych funkcji tylko dla właściciela</p>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-shield"></i>
+                                <h5>Reentrancy Guard</h5>
+                                <p>Ochrona przed atakami reentrancy w funkcjach transferujących ETH</p>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-pause"></i>
+                                <h5>Circuit Breaker</h5>
+                                <p>Możliwość zatrzymania contractu w sytuacjach awaryjnych</p>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-calculator"></i>
+                                <h5>Safe Math</h5>
+                                <p>Zabezpieczenie przed overflow/underflow w operacjach matematycznych</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEVELOPMENT PROCESS -->
+            <div class="development-section">
+                <h3>Proces Developmentu</h3>
+                <div class="process-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>Research & Design</h4>
+                        <p>Analiza problemów tradycyjnych systemów biletowych, projektowanie architektury blockchain</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Smart Contract Development</h4>
+                        <p>Implementacja logiki biznesowej w Solidity z wykorzystaniem OpenZeppelin patterns</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <h4>Testing & Security Audit</h4>
+                        <p>Comprehensive testing na Ganache, security audit i gas optimization</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>Frontend Integration</h4>
+                        <p>Implementacja Web3.js interfejsu z MetaMask integration i responsive UI</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHALLENGES & SOLUTIONS -->
+            <div class="challenges-section">
+                <h3>Wyzwania Techniczne i Rozwiązania</h3>
+                <div class="challenges-grid">
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-gas-pump"></i>
+                        </div>
+                        <h4>Gas Optimization</h4>
+                        <p>Minimalizacja kosztów transakcji przez optymalizację storage operations i batch processing</p>
+                        <div class="solution">
+                            <strong>Rozwiązanie:</strong> Packed structs, efficient data types, event emissions
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h4>Network Compatibility</h4>
+                        <p>Zapewnienie kompatybilności z różnymi sieciami Ethereum (mainnet, testnets)</p>
+                        <div class="solution">
+                            <strong>Rozwiązanie:</strong> Environment-based contract addresses, network detection
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h4>User Experience</h4>
+                        <p>Uproszczenie złożoności blockchain dla użytkowników nietechnicznych</p>
+                        <div class="solution">
+                            <strong>Rozwiązanie:</strong> Intuitive UI, clear error messages, transaction guides
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <h4>State Synchronization</h4>
+                        <p>Synchronizacja stanu aplikacji z blockchainem w czasie rzeczywistym</p>
+                        <div class="solution">
+                            <strong>Rozwiązanie:</strong> Event listeners, polling mechanisms, optimistic updates
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LESSONS LEARNED -->
+            <div class="lessons-section">
+                <h3>Zdobyte Umiejętności i Doświadczenie</h3>
+                <div class="skills-gained">
+                    <div class="skill-item">
+                        <i class="fab fa-ethereum"></i>
+                        <h4>Blockchain Development</h4>
+                        <p>Pełne zrozumienie Ethereum ecosystem, smart contracts i DApp development</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Smart Contract Security</h4>
+                        <p>Implementacja security patterns i best practices w rozwoju smart contracts</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <h4>Solidity Programming</h4>
+                        <p>Zaawansowane programowanie w Solidity z optymalizacją gas costs</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-plug"></i>
+                        <h4>Web3 Integration</h4>
+                        <p>Integracja frontend aplikacji z blockchain przez Web3.js i MetaMask</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <style>
-        .project-showcase {
-            margin-top: 4rem;
-            text-align: center;
+        .feature-section {
+            margin: 4rem 0;
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
-        .process-steps {
+        
+        .feature-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-details {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .feature-details li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            color: #6b7280;
+        }
+        
+        .feature-details li i {
+            color: #6366f1;
+            margin-right: 0.75rem;
+            width: 16px;
+        }
+        
+        .technical-section {
+            margin: 4rem 0;
+            background: #f8fafc;
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
-        .step {
+        
+        .arch-component {
             background: white;
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: #6366f1;
+        
+        .arch-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .arch-component h4 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .arch-component ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .arch-component ul li {
+            padding: 0.25rem 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .arch-component ul li::before {
+            content: "→";
+            color: #6366f1;
+            margin-right: 0.5rem;
+        }
+        
+        .contract-section {
+            margin: 4rem 0;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        
+        .function-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .function-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .function-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: #fbbf24;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+        }
+        
+        .security-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .security-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .security-item i {
+            font-size: 2rem;
+            color: #10b981;
+            margin-bottom: 1rem;
+        }
+        
+        .security-item h5 {
+            margin-bottom: 0.5rem;
+            color: #fbbf24;
+        }
+        
+        .development-section {
+            margin: 4rem 0;
+        }
+        
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
             margin: 0 auto 1rem;
         }
-        .step h4 {
+        
+        .timeline-item h4 {
             color: #1f2937;
             margin-bottom: 0.5rem;
+        }
+        
+        .challenges-section {
+            margin: 4rem 0;
+            background: #f8fafc;
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .challenge-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #ef4444;
+        }
+        
+        .challenge-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .challenge-item h4 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+        
+        .solution {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f0fdf4;
+            border-radius: 8px;
+            border-left: 3px solid #10b981;
+            font-size: 0.9rem;
+        }
+        
+        .solution strong {
+            color: #065f46;
+        }
+        
+        .lessons-section {
+            margin: 4rem 0;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        
+        .skills-gained {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .skill-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #fbbf24;
+        }
+        
+        .skill-item h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .feature-section,
+            .technical-section,
+            .contract-section,
+            .challenges-section,
+            .lessons-section {
+                padding: 2rem 1rem;
+            }
+            
+            .architecture-grid,
+            .function-grid,
+            .security-features,
+            .process-timeline,
+            .challenges-grid,
+            .skills-gained {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </body>
