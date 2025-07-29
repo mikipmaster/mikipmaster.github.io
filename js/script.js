@@ -410,35 +410,44 @@ window.addEventListener('load', () => {
 });
 
 // ===============================
-// STATYSTYKI COUNTER
+// STATYSTYKI COUNTER Z PLUSEM
 // ===============================
 
-function animateCounter(element, target, duration = 2000) {
+function animateCounterWithSuffix(element, target, suffix = '', duration = 2000) {
     const start = 0;
     const increment = target / (duration / 16);
     let current = start;
     
     const timer = setInterval(() => {
         current += increment;
-        element.textContent = Math.floor(current);
+        const currentValue = Math.floor(current);
+        
+        // Wyświetl liczbę bez suffiksu podczas animacji
+        element.textContent = currentValue;
         
         if (current >= target) {
-            element.textContent = target;
+            // Po zakończeniu animacji dodaj suffix
+            element.textContent = target + suffix;
             clearInterval(timer);
         }
     }, 16);
 }
 
-// Observer dla statystyk
+// Observer dla statystyk z obsługą suffixów
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat h3');
+            const statNumbers = entry.target.querySelectorAll('.stat-number');
             
-            statNumbers.forEach(stat => {
-                const target = parseInt(stat.textContent.replace(/\D/g, ''));
+            statNumbers.forEach((stat, index) => {
+                const target = parseInt(stat.dataset.target);
+                const suffix = stat.dataset.suffix || '';
+                
                 if (target) {
-                    animateCounter(stat, target, 1500);
+                    // Dodaj małe opóźnienie dla każdej statystyki
+                    setTimeout(() => {
+                        animateCounterWithSuffix(stat, target, suffix, 1500);
+                    }, index * 200);
                 }
             });
         }
