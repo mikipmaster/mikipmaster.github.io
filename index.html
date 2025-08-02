@@ -71,10 +71,10 @@
                     <a href="https://github.com/mikipmaster" target="_blank" aria-label="GitHub" rel="noopener">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="nothing" target="_blank" aria-label="LinkedIn" rel="noopener">
+                    <a href="www.linkedin.com/in/mikipmaster" target="_blank" aria-label="LinkedIn" rel="noopener">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="mailto:mikipmaster@example.com" aria-label="Email">
+                    <a href="michal.polujanski@gmail.com" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
                     <a href="https://twitter.com/mikipmaster" target="_blank" aria-label="Twitter" rel="noopener">
@@ -545,163 +545,97 @@
     <!-- ============================== -->
     <!-- SEKCJA KONTAKT -->
     <!-- ============================== -->
+
     <section id="contact" class="contact section-animate">
         <div class="container">
-            <h2 class="section-title">Skontaktuj się ze mną</h2>
-            <p class="section-subtitle">Szukasz Junior Developera? Napisz do mnie!</p>
-            
+            <h2 class="section-title">Kontakt</h2>
             <div class="contact-content">
+                <!-- Lewa kolumna: info dostępności -->
                 <div class="contact-info">
-                    <h3>Gotowy na nowe wyzwania!</h3>
-                    <p class="contact-description">
-                        Szukam możliwości stażu lub pierwszej pracy jako Junior Developer. 
-                        Jestem otwarty na nowe wyzwania i chętny do nauki. Skontaktuj się ze mną, 
-                        jeśli szukasz zmotywowanego programisty do swojego zespołu.
+                    <h3>Skontaktuj się ze mną</h3>
+                    <p>
+                        Gotowy na nowe wyzwania! Jeśli masz ciekawą propozycję pracy, staż lub projekt – napisz do mnie.
                     </p>
-                    
                     <div class="contact-details">
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <span>michal.polujanski@gmail.com</span>
-                            </div>
+                            <i class="fas fa-envelope"></i>
+                            <span>michal.polujanski@gmail.com</span>
                         </div>
-                    
-                            <!--
-                            <div class="contact-text">
-                                <h4>Telefon</h4>
-                                <span>+48 123 456 789</span>
-                            </div>
-                            -->
-
-                        </div>
-                        
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Lokalizacja</h4>
-                                <span>Włocławek, Polska</span>
-                            </div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Włocławek, Polska</span>
                         </div>
-                        
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Status</h4>
-                                <span>Student III roku Informatyka</span>
-                            </div>
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Student III roku Informatyki</span>
                         </div>
-                        
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Dostępność</h4>
-                                <span>Natychmiast (staż/praca)</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Social Media Links -->
-                    <div class="contact-social">
-                        <h4>Znajdź mnie także tutaj:</h4>
-                        <div class="social-links">
-                            <a href="https://github.com/mikipmaster" target="_blank" aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/mikipmaster/" target="_blank" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://twitter.com/mikipmaster" target="_blank" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://instagram.com/mikipmaster" target="_blank" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Natychmiast dostępny (staż/praca)</span>
                         </div>
                     </div>
                 </div>
-                
-                               
-                                <!-- Formularz kontaktowy wysyłający dane zwykłym mailem -->
+                <!-- Prawa kolumna: formularz kontaktowy -->
                 <div class="contact-form">
                     <form id="mailto-form" onsubmit="return sendMailto();">
-                    <div class="form-group">
-                        <label for="name">Imię i nazwisko *</label>
-                        <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
-                    </div>
-                
-                    <div class="form-group">
-                        <label for="email">Twój adres e-mail *</label>
-                        <input type="email" id="email" name="email" placeholder="jan@example.com" required>
-                    </div>
-                
-                    <div class="form-group">
-                        <label for="subject">Powód kontaktu *</label>
-                        <select id="subject" name="subject" required>
-                        <option value="">Wybierz temat</option>
-                        <option value="Oferta pracy">Oferta pracy</option>
-                        <option value="Staż">Staż</option>
-                        <option value="Współpraca">Współpraca</option>
-                        <option value="Projekt freelance">Projekt freelance</option>
-                        <option value="Inne">Inne</option>
-                        </select>
-                    </div>
-                
-                    <div class="form-group">
-                        <label for="message">Wiadomość *</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Wprowadź treść wiadomości..." required></textarea>
-                    </div>
-                
-                    <button type="submit" class="btn btn-primary btn-submit">Wyślij maila</button>
+                        <div class="form-group">
+                          <label for="name">Imię i nazwisko *</label>
+                          <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Twój adres e-mail *</label>
+                          <input type="email" id="email" name="email" placeholder="jan@example.com" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="subject">Powód kontaktu *</label>
+                          <select id="subject" name="subject" required>
+                            <option value="">Wybierz temat</option>
+                            <option value="Oferta pracy">Oferta pracy</option>
+                            <option value="Staż">Staż</option>
+                            <option value="Współpraca">Współpraca</option>
+                            <option value="Projekt freelance">Projekt freelance</option>
+                            <option value="Inne">Inne</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="message">Wiadomość *</label>
+                          <textarea id="message" name="message" rows="6" placeholder="Wprowadź treść wiadomości..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">Wyślij maila</button>
                     </form>
                 </div>
-                
-                <!-- Skrypt: generuje link mailto i otwiera klienta poczty -->
-                <script>
-                function sendMailto() {
-                    // podaj swój adres docelowy tutaj:
-                    const to = "michal.polujanski@gmail.com";
-                
-                    // pobierz dane z pól formularza
-                    const name = document.getElementById('name').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const subjectOpt = document.getElementById('subject').value.trim();
-                    const message = document.getElementById('message').value.trim();
-                
-                    if (!name || !email || !subjectOpt || !message) {
-                    alert("Uzupełnij wszystkie wymagane pola.");
-                    return false;
-                    }
-                
-                    // Treść maila (stopka i dane kontaktowe)
-                    const body =
-                    "Imię i nazwisko: " + name + "%0D%0A"
-                    + "E-mail: " + email + "%0D%0A"
-                    + "Powód kontaktu: " + subjectOpt + "%0D%0A"
-                    + "----------------------------%0D%0A"
-                    + message;
-                
-                    // Tworzymy link typu mailto
-                    const subject = encodeURIComponent("Formularz portfolio – " + subjectOpt);
-                    const mailtoLink =
-                    "mailto:" + encodeURIComponent(to)
-                    + "?subject=" + subject
-                    + "&body=" + encodeURIComponent(body);
-                
-                    window.location.href = mailtoLink;
-                    return false; // zatrzyma domyślne wysłanie formularza
-                }
-                </script>
-                
+            </div>
+        </div>
+    </section>
+    <script>
+    function sendMailto() {
+      const to = "michal.polujanski@gmail.com";
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subjectOpt = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !subjectOpt || !message) {
+        alert("Uzupełnij wszystkie wymagane pola.");
+        return false;
+      }
+      const body =
+        "Imię i nazwisko: " + name + "%0D%0A"
+        + "E-mail: " + email + "%0D%0A"
+        + "Powód kontaktu: " + subjectOpt + "%0D%0A"
+        + "----------------------------%0D%0A"
+        + message;
+      const subject = encodeURIComponent("Formularz portfolio – " + subjectOpt);
+      const mailtoLink =
+        "mailto:" + encodeURIComponent(to)
+        + "?subject=" + subject
+        + "&body=" + encodeURIComponent(body);
+      window.location.href = mailtoLink;
+      return false;
+    }
+    </script>
+    
+
+
                 <!-- stopka -->
                 <footer class="footer">
                     <div class="footer-flex">
